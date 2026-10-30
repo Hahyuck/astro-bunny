@@ -1,0 +1,60 @@
+{
+  "frameWidth": 256,
+  "frameHeight": 160,
+  "frames": 3,
+  "layout": "horizontal-strip",
+  "pivot": {
+    "x": 128,
+    "y": 159
+  },
+  "display": {
+    "width": 256,
+    "height": 160
+  },
+  "phases": [
+    {
+      "frame": 0,
+      "name": "prepare",
+      "description": "Chest expands; fists beside helmet; mouth closed"
+    },
+    {
+      "frame": 1,
+      "name": "roar-start",
+      "description": "Upward gaze and open mouth; fists rise"
+    },
+    {
+      "frame": 2,
+      "name": "roar-peak",
+      "description": "Wider open mouth and lifted chin; fists higher"
+    }
+  ],
+  "sequence": [
+    0,
+    1,
+    2
+  ],
+  "loop": false,
+  "holdFrame": 2,
+  "suggestedSequence": "Prepare0 -> start1 -> peak2, then hold the peak while the supply scene is active.",
+  "timing": "Controlled by game supply-scene code; no frame durations are baked into the asset.",
+  "palette": [
+    "#100f21",
+    "#292541",
+    "#514365",
+    "#715581",
+    "#956b9e",
+    "#b08aba",
+    "#d0afd7",
+    "#f3ddec",
+    "#fff1ee",
+    "#f5c6bd",
+    "#b87591",
+    "#ba367d",
+    "#e552a2",
+    "#ff81be",
+    "#388c8d",
+    "#68c9bd"
+  ],
+  "alpha": "binary",
+  "source": "roar.png"
+}

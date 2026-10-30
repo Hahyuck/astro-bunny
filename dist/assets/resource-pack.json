@@ -1,0 +1,325 @@
+{
+  "format": "astro-native-resource-pack",
+  "version": 1,
+  "title": "Astro Ninja Man — local resource pack",
+  "frameLayout": "horizontal-strip",
+  "resources": {
+    "characters.player": {
+      "label": "플레이어",
+      "category": "캐릭터",
+      "type": "image",
+      "source": "characters/player.png",
+      "frames": 16
+    },
+    "characters.clone": {
+      "label": "분신",
+      "category": "캐릭터",
+      "type": "image",
+      "source": "characters/clone.png",
+      "frames": 16
+    },
+    "enemies.common": {
+      "label": "일반 적",
+      "category": "일반 적",
+      "type": "image",
+      "source": "enemies/common.png",
+      "frames": 16
+    },
+    "bosses.stage1": {
+      "label": "1구간 보스",
+      "category": "보스",
+      "type": "image",
+      "source": "bosses/stage1.png",
+      "frames": 1
+    },
+    "bosses.stage2": {
+      "label": "2구간 보스",
+      "category": "보스",
+      "type": "image",
+      "source": "bosses/stage2.png",
+      "frames": 1
+    },
+    "bosses.stage3": {
+      "label": "3구간 보스",
+      "category": "보스",
+      "type": "image",
+      "source": "bosses/stage3.png",
+      "frames": 1
+    },
+    "bosses.stage4": {
+      "label": "4구간 보스",
+      "category": "보스",
+      "type": "image",
+      "source": "bosses/stage4.png",
+      "frames": 1
+    },
+    "backgrounds.stage1": {
+      "label": "1구간 배경",
+      "category": "배경",
+      "type": "image",
+      "source": null,
+      "frames": 1
+    },
+    "backgrounds.stage2": {
+      "label": "2구간 배경",
+      "category": "배경",
+      "type": "image",
+      "source": null,
+      "frames": 1
+    },
+    "backgrounds.stage3": {
+      "label": "3구간 배경",
+      "category": "배경",
+      "type": "image",
+      "source": null,
+      "frames": 1
+    },
+    "backgrounds.stage4": {
+      "label": "4구간 배경",
+      "category": "배경",
+      "type": "image",
+      "source": null,
+      "frames": 1
+    },
+    "ui.title": {
+      "label": "타이틀 화면",
+      "category": "UI",
+      "type": "image",
+      "source": "ui/title.png",
+      "frames": 1
+    },
+    "music.title": {
+      "label": "타이틀 BGM",
+      "category": "배경음악",
+      "type": "music",
+      "frames": 1
+    },
+    "music.stage1": {
+      "label": "1구간 BGM",
+      "category": "배경음악",
+      "type": "music",
+      "frames": 1
+    },
+    "music.stage2": {
+      "label": "2구간 BGM",
+      "category": "배경음악",
+      "type": "music",
+      "frames": 1
+    },
+    "music.stage3": {
+      "label": "3구간 BGM",
+      "category": "배경음악",
+      "type": "music",
+      "frames": 1
+    },
+    "music.stage4": {
+      "label": "4구간 BGM",
+      "category": "배경음악",
+      "type": "music",
+      "frames": 1
+    },
+    "music.boss1": {
+      "label": "1구간 보스 BGM",
+      "category": "배경음악",
+      "type": "music",
+      "frames": 1
+    },
+    "music.boss2": {
+      "label": "2구간 보스 BGM",
+      "category": "배경음악",
+      "type": "music",
+      "frames": 1
+    },
+    "music.boss3": {
+      "label": "3구간 보스 BGM",
+      "category": "배경음악",
+      "type": "music",
+      "frames": 1
+    },
+    "music.boss4": {
+      "label": "4구간 보스 BGM",
+      "category": "배경음악",
+      "type": "music",
+      "frames": 1
+    },
+    "music.clear": {
+      "label": "클리어 BGM",
+      "category": "배경음악",
+      "type": "music",
+      "frames": 1
+    },
+    "music.gameover": {
+      "label": "게임 오버 BGM",
+      "category": "배경음악",
+      "type": "music",
+      "frames": 1
+    },
+    "sfx.shot": {
+      "label": "발사",
+      "category": "효과음",
+      "type": "sfx",
+      "frames": 1
+    },
+    "sfx.hit": {
+      "label": "적 명중",
+      "category": "효과음",
+      "type": "sfx",
+      "frames": 1
+    },
+    "sfx.explosion": {
+      "label": "폭발",
+      "category": "효과음",
+      "type": "sfx",
+      "frames": 1
+    },
+    "sfx.damage": {
+      "label": "플레이어 피격",
+      "category": "효과음",
+      "type": "sfx",
+      "frames": 1
+    },
+    "sfx.powerup": {
+      "label": "분신 획득",
+      "category": "효과음",
+      "type": "sfx",
+      "frames": 1
+    },
+    "sfx.sword": {
+      "label": "닌자 소드",
+      "category": "효과음",
+      "type": "sfx",
+      "frames": 1
+    },
+    "sfx.start": {
+      "label": "시작",
+      "category": "효과음",
+      "type": "sfx",
+      "frames": 1
+    },
+    "sfx.clear": {
+      "label": "구간 클리어",
+      "category": "효과음",
+      "type": "sfx",
+      "frames": 1
+    },
+    "bosses.mid1_19": {
+      "label": "중간 보스 1:19",
+      "category": "보스",
+      "type": "image",
+      "source": "bosses/mid1_19.png",
+      "frames": 1
+    },
+    "bosses.mid1_20": {
+      "label": "중간 보스 1:20",
+      "category": "보스",
+      "type": "image",
+      "source": "bosses/mid1_20.png",
+      "frames": 1
+    },
+    "bosses.mid1_1": {
+      "label": "중간 보스 1:1",
+      "category": "보스",
+      "type": "image",
+      "source": "bosses/mid1_1.png",
+      "frames": 1
+    },
+    "bosses.mid1_3": {
+      "label": "중간 보스 1:3",
+      "category": "보스",
+      "type": "image",
+      "source": "bosses/mid1_3.png",
+      "frames": 1
+    },
+    "bosses.mid1_5": {
+      "label": "중간 보스 1:5",
+      "category": "보스",
+      "type": "image",
+      "source": "bosses/mid1_5.png",
+      "frames": 1
+    },
+    "bosses.mid1_11": {
+      "label": "중간 보스 1:11",
+      "category": "보스",
+      "type": "image",
+      "source": "bosses/mid1_11.png",
+      "frames": 1
+    },
+    "backgrounds.interlude6_28": {
+      "label": "배경 장면 6:28",
+      "category": "배경",
+      "type": "image",
+      "source": "backgrounds/interlude6_28.png",
+      "frames": 1
+    },
+    "backgrounds.interlude6_31": {
+      "label": "배경 장면 6:31",
+      "category": "배경",
+      "type": "image",
+      "source": "backgrounds/interlude6_31.png",
+      "frames": 1
+    },
+    "backgrounds.interlude6_22": {
+      "label": "배경 장면 6:22",
+      "category": "배경",
+      "type": "image",
+      "source": "backgrounds/interlude6_22.png",
+      "frames": 1
+    },
+    "backgrounds.interlude6_23": {
+      "label": "배경 장면 6:23",
+      "category": "배경",
+      "type": "image",
+      "source": "backgrounds/interlude6_23.png",
+      "frames": 1
+    },
+    "backgrounds.interlude6_24": {
+      "label": "배경 장면 6:24",
+      "category": "배경",
+      "type": "image",
+      "source": "backgrounds/interlude6_24.png",
+      "frames": 1
+    },
+    "backgrounds.interlude6_25": {
+      "label": "배경 장면 6:25",
+      "category": "배경",
+      "type": "image",
+      "source": "backgrounds/interlude6_25.png",
+      "frames": 1
+    },
+    "effects.shot": {
+      "label": "플레이어 탄",
+      "category": "공격·이펙트",
+      "type": "image",
+      "source": "effects/shot.png",
+      "frames": 16
+    },
+    "effects.enemyBullet": {
+      "label": "적 탄",
+      "category": "공격·이펙트",
+      "type": "image",
+      "source": "effects/enemyBullet.png",
+      "frames": 16
+    },
+    "effects.sword": {
+      "label": "검",
+      "category": "공격·이펙트",
+      "type": "image",
+      "source": "effects/sword.png",
+      "frames": 1
+    },
+    "effects.explosion": {
+      "label": "폭발",
+      "category": "공격·이펙트",
+      "type": "image",
+      "source": "effects/explosion.png",
+      "frames": 16
+    },
+    "ui.hud": {
+      "label": "점수·게이지·바닥",
+      "category": "UI",
+      "type": "image",
+      "source": "backgrounds/ground-stage1.png",
+      "frames": 1
+    }
+  }
+}

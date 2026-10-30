@@ -1,0 +1,11 @@
+{
+  "format": "NES 2bpp tiles decoded statically; no CPU or PPU execution",
+  "tileCount": 16384,
+  "atlasWidth": 1024,
+  "atlasHeight": 1024,
+  "tileWidth": 8,
+  "tileHeight": 8,
+  "columns": 128,
+  "indexEncoding": "R=G=B=index*85; A=0 for index0, 255 otherwise",
+  "sourceCHRsha256": "22a0a391eaacb0d7b774b5e02060ab97231c8482e6ba5c0dc03d3c3a7b2cf19b"
+}

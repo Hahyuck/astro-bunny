@@ -1,0 +1,13 @@
+import {readFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const path=new URL('../dist/resource-manager.js',import.meta.url);
+const source=(await readFile(path,'utf8'))+'\nexport {zipStore,unzipPack,crc32};';
+const module=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
+const entries=[['assets/resource-pack.json',new TextEncoder().encode('{"format":"astro-native-resource-pack","version":1}')],['assets/characters/player.png',new Uint8Array([137,80,78,71,0,255,16,24])],['테스트.txt',new TextEncoder().encode('로컬 리소스')]];
+const zip=module.zipStore(entries),files=await module.unzipPack(zip);
+assert.equal(files.size,3);for(const [name,data]of entries)assert.deepEqual(files.get(name),data);
+assert.equal(module.crc32(new TextEncoder().encode('123456789')),0xcbf43926);
+const broken=new Uint8Array(await zip.arrayBuffer());broken[60]^=1;
+await assert.rejects(module.unzipPack(new Blob([broken])));
+await assert.rejects(module.unzipPack(new Blob([new Uint8Array([0,0,0])])));
+console.log('PASS: ZIP round-trip (unicode names, binary bytes), known CRC32 vector, corruption and malformed ZIP rejected.');

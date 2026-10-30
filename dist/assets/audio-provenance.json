@@ -1,0 +1,243 @@
+{
+  "method": "Static music-format conversion and native Web Audio playback",
+  "emulation": false,
+  "sourceRomSha256": "37a4fb40b27da0c3eaa3ed4f3ae397263717e178931dd279e04f2844b89cbecb",
+  "driverReference": "PRG bank 0x3E mapped at 0x8000, used as a data-format specification only",
+  "songTablePrgOffset": "0x7CFD4",
+  "originalDataPreserved": [
+    "note streams",
+    "tempo changes",
+    "per-channel musical loops",
+    "note lengths",
+    "volume and pitch envelope data",
+    "DPCM compressed percussion decoded to PCM",
+    "97-word original pitch-to-period tuning table",
+    "signed one-way pitch slides with key-off and next-note reset",
+    "separate fine pitch and timer-period detune controls"
+  ],
+  "synthesisDifferences": [
+    "Web Audio oscillators replace the NES sound hardware",
+    "pulse duty-envelope motion is reduced to initial duty",
+    "noise uses filtered native white noise",
+    "envelope release handling is approximate",
+    "timing is musical-event timing, not CPU-cycle or APU-frame timing",
+    "hardware sweep and tied-note oscillator/envelope phase are not fully reproduced"
+  ],
+  "musicMap": {
+    "title": 14,
+    "start": 1,
+    "stage1": 2,
+    "boss1": 3,
+    "stage2": 4,
+    "boss2": 5,
+    "stage3": 6,
+    "boss3": 7,
+    "stage4": 8,
+    "boss4": 9,
+    "ending": 10,
+    "name": 11,
+    "gameover": 12,
+    "clear": 13
+  },
+  "confirmedSfx": {
+    "sword": {
+      "id": 35,
+      "callSite": "$E178"
+    },
+    "clone": {
+      "id": 33,
+      "callSite": "$E51C"
+    },
+    "hit": {
+      "id": 34,
+      "callSite": "$E541"
+    },
+    "kill": {
+      "id": 27,
+      "callSite": "$E3BA / $99A9"
+    },
+    "armor": {
+      "id": 24,
+      "callSite": "native F956 sound queue"
+    },
+    "impact": {
+      "id": 25,
+      "callSite": "native F956 sound queue"
+    },
+    "boss": {
+      "id": 29,
+      "callSite": "native boss routine F956 sound queue"
+    }
+  },
+  "sfxLimits": "Automatic shots are silent in the original mapping and can be replaced by a custom file. Browser synthesis differs from original hardware.",
+  "tests": {
+    "syntax": "node --check audio.js passed",
+    "streams": 37,
+    "samples": 128,
+    "envelopes": 545,
+    "scheduler": "8 stage/boss tracks each simulated for 10 minutes, 170302 scheduled notes, no invalid note times/gates and no prematurely stopped channel loops",
+    "browser": "Trusted-click playback running with nonzero analyser waveform, all 128 samples decoded, pause/resume/mute and music/SFX override/restore passed",
+    "offlineRender": {
+      "seconds": 3,
+      "peak": 0.1784195750951767,
+      "rms": 0.034174269548893,
+      "allSamplesFinite": true
+    },
+    "integratedGame": "Start entered playing with WebGL error 0 and AudioContext running; no console errors or warnings observed",
+    "resourcePanel": "Actual Chrome file chooser replacement passed for music.stage1 and sfx.hit (impact). IndexedDB reload reached title without a gesture or loading stall; Start resumed audio. Both test overrides were restored to original.",
+    "pitch": "8 source-pitch regression tests plus existing 10-minute looping test passed (9/9). Original 29564 event fields unchanged; 37 tracks and all tonal frequencies validated."
+  },
+  "pitchCorrection": {
+    "sourceVersion": "User-provided original 2020 cartridge; the supplied gameplay video is the 2022 DX edition and is not the source of these note values.",
+    "cause": "Sequence command 0x17 was mislabeled vib and ignored by native synthesis. The source uses it for a signed one-way pitch slide. Level 2 uses 132 audible slide events; ignoring these changes the melody and bass line.",
+    "notChanged": "No blanket transposition. All 29564 note/onset/duration/gate/instrument/percussion events remain identical to the pre-correction data.",
+    "unchangedEventDigest": {
+      "algorithm": "SHA-256 of JavaScript JSON.stringify tracks mapped to [s,d,g,n,v,r,duty,ch,env,tie,sample-or-null]",
+      "sha256": "09f1d66c52e1cb017f8e656963975c9e6913bfefb0973dc22a981eecd0af30c3"
+    },
+    "sourceEvidence": [
+      {
+        "address": "bank 0x3E $8742-$8776",
+        "meaning": "0x17 params = delay, interval, signed pitch step, signed semitone target; command resets cumulative slide offset."
+      },
+      {
+        "address": "bank 0x3E $893A-$89C2",
+        "meaning": "Update signed slide by step in 1/16-semitone units and clamp at target; not an oscillating vibrato."
+      },
+      {
+        "address": "bank 0x3E $838F-$8392 and $84F3-$84FA",
+        "meaning": "Key-off stops slide updates. A finished slide clears on the next note. Stored parameter bytes are not automatically retriggered."
+      },
+      {
+        "address": "bank 0x3E $8917-$8938 and $8A02-$8A28",
+        "meaning": "Arpeggio adds signed semitones; pitch envelope and fine detune add signed 1/16-semitone values before table lookup."
+      },
+      {
+        "address": "bank 0x3E $871F/$872C; $8D93-$8DA3",
+        "meaning": "0x14 is fine pitch. 0x15 is signed timer detune added after table conversion, where a positive value lowers the pitch."
+      },
+      {
+        "address": "bank 0x3E $8D48-$8DA5; PRG 0x7D182",
+        "meaning": "97 little-endian table words. Odd 1/16-semitone positions average adjacent words; octave shifts use integer division. Triangle uses the same timer but twice the pulse divisor."
+      }
+    ],
+    "pitchTable": {
+      "prgOffset": "0x7D182",
+      "words": 97,
+      "firstThreeWords": [
+        3405,
+        3381,
+        3357
+      ],
+      "clockHz": 1789773,
+      "controlHz": 60,
+      "unitsPerSemitone": 16
+    },
+    "level2Examples": [
+      {
+        "channel": "pulse 1 lead",
+        "startSeconds": 0.608108,
+        "commandCpuAddress": "0E:A1DB",
+        "commandPrgOffset": "0x1C1DB",
+        "rawCommand": [
+          23,
+          2,
+          1,
+          12,
+          4
+        ],
+        "encodedNote": 63,
+        "targetSemitones": 4,
+        "bendFrames": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            12
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            36
+          ],
+          [
+            4,
+            48
+          ],
+          [
+            5,
+            60
+          ],
+          [
+            6,
+            64
+          ]
+        ],
+        "frequencyHz": {
+          "attackFrame0": 2542.291193181818,
+          "frame1": 1316.0095588235295,
+          "targetFrame6": 1575.5044014084508
+        },
+        "timerProof": {
+          "attackTableIndex": 24,
+          "attackTableValue": 2864,
+          "attackOctave": 6,
+          "attackTimer": 43,
+          "targetTableIndex": 56,
+          "targetTableValue": 2273,
+          "targetOctave": 5,
+          "targetTimer": 70
+        },
+        "note": "The first control frame includes the source arpeggio +12-semitone attack. The following note at 1.216216 seconds has no new slide."
+      },
+      {
+        "channel": "triangle bass",
+        "startSeconds": 0.202703,
+        "commandCpuAddress": "0E:ABE7",
+        "commandPrgOffset": "0x1CBE7",
+        "rawCommand": [
+          23,
+          2,
+          1,
+          20,
+          36
+        ],
+        "encodedNote": 17,
+        "targetSemitones": 36,
+        "lastAudibleBendFrame": 23,
+        "lastAudibleOffsetUnits": 460,
+        "frequencyHz": {
+          "frame0": 43.86698529411765,
+          "frame23": 231.11738119834712
+        },
+        "timerProof": {
+          "startTableIndex": 40,
+          "startTableValue": 2551,
+          "startOctave": 1,
+          "startTimer": 1274,
+          "lastTableIndex": 78,
+          "lastTableValue": 1939,
+          "lastOctave": 3,
+          "lastTimer": 241
+        },
+        "note": "This short note ends before the +36-semitone target. Key-off preserves the boundary; the next bass command starts independently."
+      }
+    ],
+    "validation": {
+      "pitchTests": 8,
+      "targetedTotalIncludingTenMinuteLoopTest": 9,
+      "passed": 9,
+      "sourceTracks": 37,
+      "events": 29564,
+      "eventsWithBend": 1196,
+      "level2EventsWithBend": 132,
+      "allTonalFrequenciesFinite": true
+    },
+    "limits": "Native Web Audio synthesis, not CPU/APU emulation. Curves use the existing musical-event timeline on a 60 Hz control grid, not cycle-accurate hardware timing. Pulse-duty motion, noise color, hardware sweep and tied-note phase can still differ; original-vs-DX arrangements are not overwritten."
+  }
+}

@@ -1,0 +1,1 @@
+{"name":"astro-ninja-native-webgl2","version":"0.1.0","private":true,"type":"module","description":"Local native WebGL2 reconstruction from user-provided original data. No emulator.","scripts":{"test":"node --test tests/*.test.mjs"}}

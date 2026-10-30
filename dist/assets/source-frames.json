@@ -1,0 +1,110 @@
+{
+  "characters.player": {
+    "file": "characters/player.png",
+    "frames": 16,
+    "width": 24,
+    "height": 40,
+    "source": "ROM drawtable E4DC andCHRbank128..135; initial nametable attributes AA select BG2 for both main and clone source positions",
+    "paletteNES": [
+      15,
+      37,
+      37,
+      32
+    ],
+    "palettePRGOffset": 459977,
+    "idleFrame": 2,
+    "bindingConfidence": "Staticdrawcodeconfirmed; bodyanimationbanksand2poses; trouserbank128 usedasbaseline"
+  },
+  "characters.clone": {
+    "file": "characters/clone.png",
+    "frames": 16,
+    "width": 24,
+    "height": 40,
+    "source": "ROM drawtable E4DC andCHRbank128..135; initial nametable attributes AA select BG2 for both main and clone source positions",
+    "paletteNES": [
+      15,
+      37,
+      37,
+      32
+    ],
+    "palettePRGOffset": 459977,
+    "idleFrame": 2,
+    "bindingConfidence": "Staticdrawcodeconfirmed; bodyanimationbanksand2poses; trouserbank128 usedasbaseline"
+  },
+  "enemies.common": {
+    "file": "enemies/common.png",
+    "frames": 16,
+    "width": 16,
+    "height": 16,
+    "paletteNES": [
+      15,
+      19,
+      36,
+      32
+    ],
+    "bindingConfidence": "ROMpalette exact; specificenemy palettebindingnotproven"
+  },
+  "ui.title": {
+    "file": "ui/title.png",
+    "frames": 1,
+    "width": 256,
+    "height": 240,
+    "sourceMap": "maps.json:title"
+  },
+  "effects.shot": {
+    "file": "effects/shot.png",
+    "frames": 16,
+    "width": 8,
+    "height": 16,
+    "paletteNES": [
+      15,
+      36,
+      33,
+      32
+    ],
+    "source": "PRG bank38 A7E5, OAM tile D5, sprite palette3; 8x16 visual, separate 32px collision trail.",
+    "bindingConfidence": "Confirmed from static OAM draw routine; initial stage palette, CHR animation bank sampled statically."
+  },
+  "effects.enemyBullet": {
+    "file": "effects/enemyBullet.png",
+    "frames": 16,
+    "width": 8,
+    "height": 16,
+    "paletteNES": [
+      15,
+      37,
+      33,
+      32
+    ],
+    "source": "Type1 meta0A: OAM tileC5, sprite palette2. Other types may use another tile/palette.",
+    "bindingConfidence": "Confirmed from static OAM draw routine; initial stage palette, CHR animation bank sampled statically."
+  },
+  "effects.sword": {
+    "file": "effects/sword.png",
+    "frames": 1,
+    "width": 8,
+    "height": 128,
+    "paletteNES": [
+      15,
+      36,
+      33,
+      32
+    ],
+    "source": "PRG bank38 A6CB; maxextent8, topY44, bottom172, sprite palette3. Full-length replacement template.",
+    "bindingConfidence": "Confirmed from static OAM draw routine; initial stage palette, CHR animation bank sampled statically."
+  },
+  "effects.explosion": {
+    "file": "effects/explosion.png",
+    "frames": 16,
+    "width": 16,
+    "height": 16,
+    "paletteNES": [
+      15,
+      37,
+      33,
+      32
+    ],
+    "source": "PRG bank38 A71E, counter1..31, OAM tile=((counter&FE)*2+FD)&FF; two8x16 columns, sprite palette2.",
+    "bindingConfidence": "Confirmed from static OAM draw routine; initial stage palette, CHR animation bank sampled statically."
+  }
+}

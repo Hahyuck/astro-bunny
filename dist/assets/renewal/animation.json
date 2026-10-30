@@ -1,0 +1,96 @@
+{
+  "frameWidth": 64,
+  "frameHeight": 96,
+  "frames": 16,
+  "layout": "horizontal-strip",
+  "baseline": 95,
+  "display": {
+    "width": 32,
+    "height": 48,
+    "texelsPerWorldUnit": 2,
+    "worldGrid": [
+      256,
+      240
+    ]
+  },
+  "player": "player.png",
+  "clone": "clone.png",
+  "palette": [
+    "#100f21",
+    "#292541",
+    "#514365",
+    "#715581",
+    "#956b9e",
+    "#b08aba",
+    "#d0afd7",
+    "#f3ddec",
+    "#fff1ee",
+    "#f5c6bd",
+    "#b87591",
+    "#ba367d",
+    "#e552a2",
+    "#ff81be",
+    "#388c8d",
+    "#68c9bd"
+  ],
+  "fire": {
+    "frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ticksPerFrame": 4,
+    "loop": true
+  },
+  "sword": {
+    "frames": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "timeline": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      7,
+      8,
+      9,
+      10,
+      10,
+      10,
+      10
+    ],
+    "ticksPerEntry": 2,
+    "loop": false
+  },
+  "reserved": {
+    "frames": [
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "copiesOf": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "usedByCurrentGameplay": false
+  },
+  "sourceGeometry": "One shared source-to-target scale, directly from high-resolution source poses; no per-frame zoom. Mixed-resolution character textures."
+}

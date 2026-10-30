@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101018">
+  <title>ASTRO BUNNY · WebGL2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cabinet">
+    <header class="masthead">
+      <div class="brand">
+        <span class="mark" aria-hidden="true"></span>
+        <div><p class="edition">PIXEL RENEWAL EDITION</p><h1>ASTRO <span>BUNNY</span></h1></div>
+      </div>
+      <div class="view-options">
+        <span class="art-edition"><i aria-hidden="true"></i>256 × 240</span>
+        <label class="theme-picker" for="visual-theme"><span>비주얼</span><select id="visual-theme" aria-label="비주얼 스타일"><option value="renewal" selected>리뉴얼</option><option value="classic">클래식</option></select></label>
+      </div>
+    </header>
+    <section class="screen-shell" aria-label="게임 화면">
+      <canvas id="game" width="256" height="240" tabindex="0" aria-label="아스트로 버니. 좌우 방향키 이동, Z 또는 스페이스 소드, 엔터 시작, P 일시정지"></canvas>
+      <div id="loading" class="loading" role="status"><span>게임을 준비하는 중…</span></div>
+    </section>
+    <section class="toolbar" aria-label="게임 메뉴">
+      <button id="start" class="primary">작전 시작 <kbd>Enter</kbd></button>
+      <button id="pause">일시정지 <kbd>P</kbd></button>
+      <button id="sound" aria-pressed="false">소리 켜짐 <kbd>M</kbd></button>
+      <button id="fullscreen" title="전체 화면">전체 화면 <kbd>F</kbd></button>
+    </section>
+    <div class="help"><span><kbd>←</kbd><kbd>→</kbd> 이동</span><span><kbd>Z</kbd> / <kbd>Space</kbd> 소드</span><span class="help-passive">자동 발사 · 게임패드</span></div>
+    <div class="touch-controls" aria-label="터치 조작">
+      <div><button id="left" aria-label="왼쪽 이동">◀</button><button id="right" aria-label="오른쪽 이동">▶</button></div>
+      <button id="sword" class="sword" aria-label="소드 공격">SWORD</button>
+    </div>
+    <footer><div class="credits"><span id="status">개인 리뉴얼 에디션</span><span>Original ASTRO NINJA MAN © RIKI</span></div><a href="./README.txt" target="_blank" rel="noopener">플레이 안내 <span aria-hidden="true">↗</span></a></footer>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>

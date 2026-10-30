@@ -1,0 +1,163 @@
+{
+  "title": "ASTRO BUNNY",
+  "artResolution": [
+    256,
+    240
+  ],
+  "characterStatus": "Detailed spacesuit bunny and mint clones; separate forward gait activated by actual travel. Idle and charged poses preserved.",
+  "resources": {
+    "characters.player": {
+      "source": "renewal/player.png",
+      "frames": 16
+    },
+    "characters.clone": {
+      "source": "renewal/clone.png",
+      "frames": 16
+    },
+    "characters.playerMove": {
+      "label": "플레이어 이동 동작",
+      "category": "캐릭터",
+      "type": "image",
+      "source": "renewal/player-move.png",
+      "frames": 6
+    },
+    "characters.cloneMove": {
+      "label": "분신 이동 동작",
+      "category": "캐릭터",
+      "type": "image",
+      "source": "renewal/clone-move.png",
+      "frames": 6
+    },
+    "characters.roar": {
+      "label": "분신 보급 포효",
+      "category": "캐릭터",
+      "type": "image",
+      "source": "renewal/roar.png",
+      "frames": 3
+    },
+    "backgrounds.stage1": {
+      "source": "renewal/bg1.png",
+      "frames": 1
+    },
+    "bosses.stage1": {
+      "source": "renewal/boss1.png",
+      "frames": 1
+    },
+    "backgrounds.stage2": {
+      "source": "renewal/bg2.png",
+      "frames": 1
+    },
+    "bosses.stage2": {
+      "source": "renewal/boss2.png",
+      "frames": 1
+    },
+    "backgrounds.stage3": {
+      "source": "renewal/bg3.png",
+      "frames": 1
+    },
+    "bosses.stage3": {
+      "source": "renewal/boss3.png",
+      "frames": 1
+    },
+    "backgrounds.stage4": {
+      "source": "renewal/bg4.png",
+      "frames": 1
+    },
+    "bosses.stage4": {
+      "source": "renewal/boss4.png",
+      "frames": 1
+    },
+    "enemies.common": {
+      "source": "renewal/enemies.png",
+      "frames": 8
+    },
+    "ui.title": {
+      "source": "renewal/title.png",
+      "frames": 1
+    },
+    "ui.hud": {
+      "source": null,
+      "frames": 1
+    },
+    "bosses.mid1_19": {
+      "source": "renewal/boss3.png",
+      "frames": 1
+    },
+    "bosses.mid1_20": {
+      "source": "renewal/boss4.png",
+      "frames": 1
+    },
+    "bosses.mid1_1": {
+      "source": "renewal/boss1.png",
+      "frames": 1
+    },
+    "bosses.mid1_3": {
+      "source": "renewal/boss3.png",
+      "frames": 1
+    },
+    "bosses.mid1_5": {
+      "source": "renewal/boss1.png",
+      "frames": 1
+    },
+    "bosses.mid1_11": {
+      "source": "renewal/boss3.png",
+      "frames": 1
+    },
+    "backgrounds.interlude6_28": {
+      "source": null,
+      "frames": 1
+    },
+    "backgrounds.interlude6_31": {
+      "source": null,
+      "frames": 1
+    },
+    "backgrounds.interlude6_22": {
+      "source": null,
+      "frames": 1
+    },
+    "backgrounds.interlude6_23": {
+      "source": null,
+      "frames": 1
+    },
+    "backgrounds.interlude6_24": {
+      "source": null,
+      "frames": 1
+    },
+    "backgrounds.interlude6_25": {
+      "source": null,
+      "frames": 1
+    },
+    "effects.shot": {
+      "source": null,
+      "frames": 1
+    },
+    "effects.enemyBullet": {
+      "source": null,
+      "frames": 1
+    },
+    "effects.sword": {
+      "source": null,
+      "frames": 1
+    },
+    "effects.explosion": {
+      "source": null,
+      "frames": 1
+    }
+  },
+  "characterResolution": [
+    64,
+    96
+  ],
+  "characterDisplaySize": [
+    32,
+    48
+  ],
+  "renderResolution": [
+    512,
+    480
+  ],
+  "classicRenderResolution": [
+    256,
+    240
+  ]
+}

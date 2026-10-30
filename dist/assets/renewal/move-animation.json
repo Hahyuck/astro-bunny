@@ -1,0 +1,64 @@
+{
+  "revision": "forward-walk",
+  "frameWidth": 64,
+  "frameHeight": 96,
+  "frames": 6,
+  "layout": "horizontal-strip",
+  "baseline": 95,
+  "display": {
+    "width": 32,
+    "height": 48,
+    "texelsPerWorldUnit": 2
+  },
+  "player": "player-move.png",
+  "clone": "clone-move.png",
+  "loop": true,
+  "sequence": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "ticksPerFrame": 4,
+  "tickRate": 60,
+  "durationTicks": 24,
+  "movementTiming": {
+    "mode": "distance-driven",
+    "worldUnitsPerFrame": 8,
+    "typicalTicksPerFrame": 4,
+    "sequenceDirection": {
+      "right": "forward",
+      "left": "forward"
+    }
+  },
+  "phases": [
+    "left front contact, right trailing",
+    "right knee forward/high, left support",
+    "right foot lowering forward, left support",
+    "right front contact, left trailing",
+    "left knee forward/high, right support",
+    "left foot lowering forward, right support"
+  ],
+  "activation": "Use only while actual horizontal position changes; idle firing, blocked wall movement and sword charge keep their existing sprite sheets.",
+  "facing": "Front-facing forward walk/run in place. Both left and right travel advance the same cycle. No horizontal mirroring or reversed playback.",
+  "palette": [
+    "#100f21",
+    "#292541",
+    "#514365",
+    "#715581",
+    "#956b9e",
+    "#b08aba",
+    "#d0afd7",
+    "#f3ddec",
+    "#fff1ee",
+    "#f5c6bd",
+    "#b87591",
+    "#ba367d",
+    "#e552a2",
+    "#ff81be",
+    "#388c8d",
+    "#68c9bd"
+  ]
+}
